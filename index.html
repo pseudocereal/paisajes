@@ -19,7 +19,7 @@
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         
          <!-- Personalized font, can add through Google APIs -->
-        <link href='http://fonts.googleapis.com/css?family=Fenix|Meddon' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Kotta+One|Courgette' rel='stylesheet' type='text/css'>
 
         <!-- Custom styles for this template -->
     	<!-- MCB note, body/panel below is for the pop-up windows -->
@@ -30,7 +30,7 @@
             }
             body {
                 padding-top: 50px;
-                font-family: 'Fenix', serif;
+                font-family: 'Kotta+One', serif;
                
             } 
             .panel-primary {
@@ -38,8 +38,8 @@
 				
 			}
             .panel-primary .panel-heading {
-            	background-color: blue;
-				border-color: blue;
+            	background-color: SteelBlue;
+				border-color: SteelBlue;
         	
         
             }
@@ -79,7 +79,7 @@
                 font-size: 22px;
                 color: white;
                 white-space: nowrap;
-                font-family: 'Meddon', cursive;
+                font-family: 'Courgette', cursive;
                 
             }
             .navbar-default {
@@ -162,8 +162,8 @@
     <body>
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle btn" data-toggle="collapse" data-target=".navbar-collapse" style="height: 34px; padding: 5px 10px; margin-right: 10px;"><i class="fa fa-ellipsis-v" style="color: green"></i></button>
-                <button id="toggle" type="button" class="navbar-toggle btn" style="height: 34px; padding: 5px 10px; margin-right: 10px;"><i id="toggleIcon" class="fa fa-check-square-o" style="color: green"></i></button>
+                <button type="button" class="navbar-toggle btn" data-toggle="collapse" data-target=".navbar-collapse" style="height: 34px; padding: 5px 10px; margin-right: 10px;"><i class="fa fa-ellipsis-v" style="color: SteelBlue"></i></button>
+                <button id="toggle" type="button" class="navbar-toggle btn" style="height: 34px; padding: 5px 10px; margin-right: 10px;"><i id="toggleIcon" class="fa fa-check-square-o" style="color: SteelBlue"></i></button>
 <!-- Header title -->
                 <a class="navbar-brand" style="color: blue" href="#"><i>Paisajes</i></a>
             </div>
@@ -176,22 +176,22 @@
                 </form>
 <!-- Navigation bar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="fa fa-question-circle" style="color: green"></i>&nbsp;&nbsp;About</a></li>
+                    <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="fa fa-question-circle" style="color: SteelBlue"></i>&nbsp;&nbsp;About</a></li>
                     <li class="dropdown">
-                        <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe" style="color: green"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>
+                        <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe" style="color: SteelBlue"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>
                             <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#legendModal').modal('show'); return false;"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>
                             </ul>
                     </li>
                     <!-- <li class="dropdown">
-                        <a id="downloadDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cloud-download" style="color: green"></i>&nbsp;&nbsp;Download <b class="caret"></b></a>
+                        <a id="downloadDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cloud-download" style="color: SteelBlue"></i>&nbsp;&nbsp;Download <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="data/ieldran.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Cemeteries</a></li>
                                 //
                             </ul>
                     </li> -->
-        			<li><a href="http://dev2.matrix.msu.edu/~kathryn.meyers/EAS/bootleaf-master/resources.html"><i class="fa fa-file" style="color: green"></i>&nbsp;&nbsp;Resources</a></li>
+        			<li><a href="http://dev2.matrix.msu.edu/~kathryn.meyers/EAS/bootleaf-master/resources.html"><i class="fa fa-file" style="color: SteelBlue"></i>&nbsp;&nbsp;Resources</a></li>
                 </ul>
             </div><!--/.navbar-collapse -->
         </div>
@@ -201,7 +201,7 @@
             <div class="col-sm-3 col-lg-3" id="sidebar" style="padding: 10px; overflow: auto;">
                 <ul class="nav nav-tabs" id="myTab">
  <!-- Sidebar navigation -->                	
-                	<li class ="active" style="color: green"><a href="#test" data-toggle="tab" style="color: black"><i class="fa fa-spinner"></i>&nbsp;Welcome</a></li>
+                	<li class ="active" style="color: SteelBlue"><a href="#test" data-toggle="tab" style="color: black"><i class="fa fa-spinner"></i>&nbsp;Welcome</a></li>
                 	
                     <li><a href="#layers" data-toggle="tab" style="color: black"><i class="fa fa-check-square-o"></i>&nbsp;Layers</a></li>
                     
@@ -216,7 +216,7 @@
    <!-- First Tab -->                      
                         <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-test" style="color: green">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-test" style="color: SteelBlue">
                                         Welcome to <i>paisajes</i>
                                     </a>
                                 </div>
@@ -234,7 +234,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <label>
-                                    	<a style="color: green">Adding information </a>
+                                    	<a style="color: SteelBlue">Adding information </a>
                                     </label>
                                 </div>
                                 <div id="basemap-layers" class="panel-collapse collapse in">
@@ -249,14 +249,14 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <label>
-                                    	<a style="color: green">License and Attribution </a>
+                                    	<a style="color: SteelBlue">License and Attribution </a>
                                     </label>
                                 </div>
                                 <div id="basemap-layers" class="panel-collapse collapse in">
                                     <div class="panel-body" style="padding: 0px 15px;">
                                             <label>
-                                            	<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><i>ieldran</i></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ieldran.matrix.msu.edu" property="cc:attributionName" rel="cc:attributionURL" style="color: green">Katy Meyers and Matt Austin</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="color: green">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br />
-                                            	<p>Attribution: Meyers and Austin 2014. <i>ieldran</i>: The Early Anglo-Saxon Mapping Project. <i>Electronic Document</i><a href "http://ieldran.matrix.msu.edu" style="color: green"> http://ieldran.matrix.msu.edu</a></p>
+                                            	<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><i>ieldran</i></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ieldran.matrix.msu.edu" property="cc:attributionName" rel="cc:attributionURL" style="color: SteelBlue">Katy Meyers and Matt Austin</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="color: SteelBlue">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br />
+                                            	<p>Attribution: Meyers and Austin 2014. <i>ieldran</i>: The Early Anglo-Saxon Mapping Project. <i>Electronic Document</i><a href "http://ieldran.matrix.msu.edu" style="color: SteelBlue"> http://ieldran.matrix.msu.edu</a></p>
                                                 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
                                             </label>                                 
                                     </div>
@@ -275,7 +275,7 @@
                         
                         <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers" style="color: green">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers" style="color: SteelBlue">
                                         Navigating <i>paisajes</i> 
                                     </a>
                                 </div>
@@ -294,7 +294,7 @@
                         
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers" style="color: green">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers" style="color: SteelBlue">
                                         Overlay Layers
                                     </a>
                                 </div>
@@ -304,7 +304,7 @@
                                         <div class="text">
                                             <label>
                                                 <input type="checkbox" name="overlayLayers" id="cemeteries" z-index="3" checked>
-                                                Mixed Cemeteries   &nbsp;<img src="img/pingreen.png" width="20" height="28">
+                                                Mixed Cemeteries   &nbsp;<img src="img/pinSteelBlue.png" width="20" height="28">
                                             </label>
                    
                                         </div>
@@ -320,7 +320,7 @@
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#basemap-layers" style="color: green">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#basemap-layers" style="color: SteelBlue">
                                         Basemaps
                                     </a>
                                 </div>
@@ -374,11 +374,11 @@
 
                     <div class="modal-body">
                          <ul id="aboutTabs" class="nav nav-tabs">
-                            <li class="active" style="color: black"><a href="#about" data-toggle="tab" style="color: grey"><i class="fa fa-question-circle" style="color: green"></i>&nbsp;About the project</a></li>
-                            <!-- <li><a href="#contact" data-toggle="tab" style="color: grey"><i class="fa fa-envelope" style="color: green"></i>&nbsp;Contribute</a></li>-->
-                            <li><a href="#disclaimer" data-toggle="tab" style="color: grey"><i class="fa fa-wrench" style="color: green"></i>&nbsp;Framework</a></li>
+                            <li class="active" style="color: black"><a href="#about" data-toggle="tab" style="color: grey"><i class="fa fa-question-circle" style="color: SteelBlue"></i>&nbsp;About the project</a></li>
+                            <!-- <li><a href="#contact" data-toggle="tab" style="color: grey"><i class="fa fa-envelope" style="color: SteelBlue"></i>&nbsp;Contribute</a></li>-->
+                            <li><a href="#disclaimer" data-toggle="tab" style="color: grey"><i class="fa fa-wrench" style="color: SteelBlue"></i>&nbsp;Framework</a></li>
                             <li class="dropdown" style="color: black">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: grey"><i class="fa fa-globe" style="color: green"></i>&nbsp;Metadata <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: grey"><i class="fa fa-globe" style="color: SteelBlue"></i>&nbsp;Metadata <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                    
                                     <li><a href="#cemeteries-tab" data-toggle="tab" >Cemeteries</a></li>
@@ -458,7 +458,7 @@
                     </div>
                     <div class="modal-body">
                         <p>
-                        <img src="img/pingreen.png" width="24" height="28"> Mixed Cemeteries</p>
+                        <img src="img/pinSteelBlue.png" width="24" height="28"> Mixed Cemeteries</p>
                         <p>
                         <img src="img/pinblue.png" width="24" height="28"> Cremation Cemeteries</p>
                     </div>
