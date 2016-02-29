@@ -165,7 +165,7 @@
                 <button type="button" class="navbar-toggle btn" data-toggle="collapse" data-target=".navbar-collapse" style="height: 34px; padding: 5px 10px; margin-right: 10px;"><i class="fa fa-ellipsis-v" style="color: SteelBlue"></i></button>
                 <button id="toggle" type="button" class="navbar-toggle btn" style="height: 34px; padding: 5px 10px; margin-right: 10px;"><i id="toggleIcon" class="fa fa-check-square-o" style="color: SteelBlue"></i></button>
 <!-- Header title -->
-                <a class="navbar-brand" style="color: SteelBlue" href="#"><i>Paisajes: Exploring the Landscapes of the Taraco Peninsula, Bolivia</i></a>
+                <a class="navbar-brand" style="color: SteelBlue" href="#"><i>Paisajes: Exploring Landscapes of the Taraco Peninsula, Bolivia</i></a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-collapse">
                 <form class="navbar-form navbar-right">
@@ -225,7 +225,7 @@
                 
                                       
                                             <label>
-                                                The Taraco Peninsula is located on the shores of Lake Titicaca, Bolivia 3,810m above sea level. Although it is located off of the major roads that lead to well-known destinations such as Tiwanaku and Copacabana, it is well-worth the visit because of its natural beauty, the vibrancy of its communities, and its rich archaeological history. This website introduces visitors to the people and landscapes of the Taraco peninsula that have developed over a 3,000 year history.  
+                                                The Taraco Peninsula is located on the shores of Lake Titicaca, Bolivia 3,810m above sea level. Although it is located off of the major roads that lead to well-known destinations such as Tiwanaku and Copacabana, it is well-worth the visit because of its natural beauty, the vibrancy of its communities, and its rich archaeological history. This website introduces visitors to the people and landscapes of the Taraco peninsula that have developed over a 3,500 year history.  
                                             </label>
                                     </div>
                                 </div>
@@ -234,13 +234,13 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <label>
-                                    	<a style="color: SteelBlue">Adding information </a>
+                                    	<a style="color: SteelBlue">New Text </a>
                                     </label>
                                 </div>
                                 <div id="basemap-layers" class="panel-collapse collapse in">
                                     <div class="panel-body" style="padding: 0px 15px;">
                                             <label>
-                                                This is a community sourced project. In the near future, you will be able to submit your data to the project, whether it consist of a cemetery we missed, corrections about current data, or additional citations.
+                                                New text.
                                             </label>                                 
                                     </div>
                                 </div>
@@ -255,8 +255,8 @@
                                 <div id="basemap-layers" class="panel-collapse collapse in">
                                     <div class="panel-body" style="padding: 0px 15px;">
                                             <label>
-                                            	<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><i>ieldran</i></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ieldran.matrix.msu.edu" property="cc:attributionName" rel="cc:attributionURL" style="color: SteelBlue">Katy Meyers and Matt Austin</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="color: SteelBlue">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br />
-                                            	<p>Attribution: Meyers and Austin 2014. <i>ieldran</i>: The Early Anglo-Saxon Mapping Project. <i>Electronic Document</i><a href "http://ieldran.matrix.msu.edu" style="color: SteelBlue"> http://ieldran.matrix.msu.edu</a></p>
+                                            	<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><i>paisajes</i></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ieldran.matrix.msu.edu" property="cc:attributionName" rel="cc:attributionURL" style="color: SteelBlue">Maria Bruno</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="color: SteelBlue">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br />
+                                            	<p>Attribution: Bruno 2016. <i>ieldran</i>: Webmapping Taraco Landscapes </p>
                                                 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
                                             </label>                                 
                                     </div>
@@ -616,6 +616,216 @@
                 attribution: 'Labels courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency'
             })]);
 
+// Overlay Layers
+    		
+    		
+            var cremation = L.geoJson(null, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: L.icon({
+                            iconUrl: "img/pinblue.png",
+                            iconSize: [10, 12],
+                            iconAnchor: [12, 28],
+                            popupAnchor: [0, -25]
+                        }),
+                        title: feature.properties.cemetery,
+                        riseOnHover: true
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+                    if (feature.properties) {
+                         var content =    "<table class='table-striped table-bordered table-condensed' style='width: 300px'> "+
+                                            "<tr><th>Cemetery</th><td>" + feature.properties.cemetery + "</td></tr>"+
+                                            "<tr><th>Historic County/th><td>" + feature.properties.historic_county + "</td></tr>"+
+                                            "<tr><th>Type</th><td>" + feature.properties.type + "</td></tr>"+
+                                            "<tr><th>Cremation Burials</th><td>" + feature.properties.cremation_burials + "</td></tr>"+
+                                            "<tr><th>Inhumation Burials</th><td>" + feature.properties.inhumation_burials + "</td></tr>"+
+                                            "<tr><th>Date Range</th><td>" + feature.properties.date_range + "</td></tr>"+
+                                            "<tr><th>Citation</th><td>" + feature.properties.citation + "</td></tr>"+
+                                            "<tr><th>Museum</th><td>" + feature.properties.museum + "</td></tr>"+
+                                            "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>"+
+                                        "<table>";
+
+                        if (document.body.clientWidth <= 767) {
+                            layer.on({
+                                click: function(e) {
+                                    $("#feature-title").html(feature.properties.cemetery);
+                                    $("#feature-info").html(content);
+                                    $("#featureModal").modal("show");
+                                }
+                            });
+
+                        } else {
+                            layer.bindPopup(content, {
+                                maxWidth: "auto",
+                                closeButton: false
+                            });
+                        };
+                        cremationSearch.push({
+                            value: layer.feature.properties.cemetery,
+                            tokens: [layer.feature.properties.cemetery],
+                            layer: "Cremation Cemeteries",
+                            id: L.stamp(layer),
+                            lat: layer.feature.geometry.coordinates[1],
+                            lng: layer.feature.geometry.coordinates[0]
+                        });
+                    }
+                }
+            });
+            $.getJSON("data/ieldran_cremation.geojson", function (data) {
+                cremation.addData(data);
+            });
+            
+            var cemeteries = L.geoJson(null, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: L.icon({
+                            iconUrl: "img/pingreen.png",
+                            iconSize: [10, 12],
+                            iconAnchor: [12, 28],
+                            popupAnchor: [0, -25]
+                        }),
+                        title: feature.properties.NAME,
+                        riseOnHover: true
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+                    if (feature.properties) {
+                        var content =   "<table class='table-striped table-bordered table-condensed' style='width: 300px'> "+
+                                            "<tr><th>Cemetery</th><td>" + feature.properties.cemetery + "</td></tr>"+
+                                            "<tr><th>Historic County</th><td>" + feature.properties.historic_county + "</td></tr>"+
+                                            "<tr><th>Type</th><td>" + feature.properties.type + "</td></tr>"+
+                                            "<tr><th>Cremation Burials</th><td>" + feature.properties.cremation_burials + "</td></tr>"+
+                                            "<tr><th>Inhumation Burials</th><td>" + feature.properties.inhumation_burials + "</td></tr>"+
+                                            "<tr><th>Date Range</th><td>" + feature.properties.date_range + "</td></tr>"+
+                                            "<tr><th>Citation</th><td>" + feature.properties.citation + "</td></tr>"+
+                                            "<tr><th>Museum</th><td>" + feature.properties.museum + "</td></tr>"+
+                                            "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>"+
+                                        "<table>";
+                                        
+
+                        if (document.body.clientWidth <= 767) {
+                            layer.on({
+                                click: function(e) {
+                                    $("#feature-title").html(feature.properties.cemetery);
+                                    $("#feature-info").html(content);
+                                    $("#featureModal").modal("show");
+                                }
+                            });
+
+                        } else {
+                            layer.bindPopup(content, {
+                                maxWidth: "auto",
+                                closeButton: false
+                            });
+                        };
+                        cemeteriesSearch.push({
+                            value: layer.feature.properties.cemetery,
+                            tokens: [layer.feature.properties.cemetery],
+                            layer: "Cemeteries",
+                            id: L.stamp(layer),
+                            lat: layer.feature.geometry.coordinates[1],
+                            lng: layer.feature.geometry.coordinates[0]
+                        });
+                    }
+                }
+            });
+            $.getJSON("data/ieldran_mixed.geojson", function (data) {
+                cemeteries.addData(data);
+            });
+
+            map = L.map("map", {
+                zoom: 6,
+                center: [52.95042, -1.142578], 
+                layers: [mapquestOSM, cemeteries, cremation]
+            });
+			
+			var hash = new L.Hash(map);
+			
+            // Larger screens get expanded layer control
+            if (document.body.clientWidth <= 767) {
+                var isCollapsed = true;
+            } else {
+                var isCollapsed = false;
+            };
+
+            // Highlight search box text on click
+            $("#searchbox").click(function () {
+                $(this).select();
+            });
+
+            // Typeahead search functionality
+            $(document).one("ajaxStop", function() {
+                $("#loading").hide();
+                $("#searchbox").typeahead([{
+                    
+                    name: "Mixed Cemeteries",
+                    local: cemeteriesSearch,
+                    minLength: 2,
+                    limit: 10,
+                    header: "<h4 class='typeahead-header'><img src='img/pingreen.png' width='20' height='28'>&nbsp;Mixed Cemeteries</h4>"
+               
+                },{
+                
+                name: "Cremation Cemeteries",
+                    local: cremationSearch,
+                    minLength: 2,
+                    limit: 10,
+                    header: "<h4 class='typeahead-header'><img src='img/pinblue.png' width='20' height='28'>&nbsp;Cremation Cemeteries</h4>"
+                },{
+                    name: "GeoNames",
+                    remote: {
+                        url: "http://api.geonames.org/searchJSON?username=bootleaf&featureClass=P&maxRows=5&countryCode=US&name_startsWith=%QUERY",
+                        beforeSend: function(jqXhr, settings) {
+                            settings.url += "&east="+map.getBounds().getEast()+"&west="+map.getBounds().getWest()+"&north="+map.getBounds().getNorth()+"&south="+map.getBounds().getSouth();
+                        },
+                        filter: function(parsedResponse) {
+                            var dataset = [];
+                            for(i = 0; i < parsedResponse.geonames.length; i++) {
+                                dataset.push({
+                                    value: parsedResponse.geonames[i].name,
+                                    tokens: [parsedResponse.geonames[i].name],
+                                    layer: "GeoNames",
+                                    lat: parsedResponse.geonames[i].lat,
+                                    lng: parsedResponse.geonames[i].lng
+                                });
+                            }
+                            return dataset;
+                        }
+                    },
+                    minLength: 2,
+                    limit: 5,
+                    header: "<h4 class='typeahead-header'><img src='img/globe.png' width='25' height='25'>&nbsp;GeoNames Places</h4>"
+                  }]).on("typeahead:selected", function (obj, datum) {
+                    if (datum.layer === "Boroughs") {
+                        map.fitBounds(datum.bounds);
+                    };
+                    if (datum.layer === "Cemeteries") {
+                        if (!map.hasLayer(cemeteries)) {
+                            map.addLayer(cemeteries);
+                            $("#cemeteries").prop("checked", true);
+                        };
+                        map.setView([datum.lat, datum.lng], 17);
+                        if (map._layers[datum.id]) {
+                            map._layers[datum.id].openPopup();
+                        };
+                    };
+                    if (datum.layer === "GeoNames") {
+                        map.setView([datum.lat, datum.lng], 14);
+                    };
+                    if ($("#navbar-collapse").height() > 50) {
+                        $("#navbar-collapse").collapse("hide");
+                    };
+                }).on("typeahead:initialized ", function () {
+                    $(".tt-dropdown-menu").css("max-height", 300);
+                }).on("typeahead:opened", function () {
+                    $(".navbar-collapse.in").css("max-height", $(document).height()-$(".navbar-header").height());
+                    $(".navbar-collapse.in").css("height", $(document).height()-$(".navbar-header").height());
+                }).on("typeahead:closed", function () {
+                    $(".navbar-collapse.in").css("max-height", "");
+                    $(".navbar-collapse.in").css("height", "");
+                });
+            });
 
 // Placeholder hack for IE
             if (navigator.appName == "Microsoft Internet Explorer") {
