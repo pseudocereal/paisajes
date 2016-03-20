@@ -597,22 +597,18 @@
  // Add Basemaps 
  
             // Basemap Layers
-            var mapboxOV = L.tileLayer("https://api.mapbox.com/styles/v1/pseudocereal/cil6yf5qx00c8aam4lj241fpj.html?title=true&access_token=pk.eyJ1IjoicHNldWRvY2VyZWFsIiwiYSI6IjY2NGNhMTEwZTU4MzUyZDc1Njg1OGMyNmU5ZGI5NDU4In0.PP0mtne9k9Awcn4fCgM3gg#8/-15.873467071441752/-69.1331930946276/0", {
+            var mapboxOV = L.tileLayer("https:https://{s}.tiles.mapbox.com/v3/[pseudocereal.cil6yf5qx00c8aam4lj241fpj]/{-69.133193}/{-15.873467}/{8.00}.png", {
                 maxZoom: 19,
-                subdomains: ["otile1", "otile2", "otile3", "otile4"],
                 attribution: 'Tiles courtesy of <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
             });
-            var mapboxSA = L.tileLayer("https://api.mapbox.com/styles/v1/pseudocereal/cil6yrv1s00caaam4nwe98ypq.html?title=true&access_token=pk.eyJ1IjoicHNldWRvY2VyZWFsIiwiYSI6IjY2NGNhMTEwZTU4MzUyZDc1Njg1OGMyNmU5ZGI5NDU4In0.PP0mtne9k9Awcn4fCgM3gg#12/-16.460190181540426/-68.8443239253111/0", {
+            var mapboxSA = L.tileLayer("https://{s}.tiles.mapbox.com/v3/[MAP ID]/{z}/{x}/{y}.png", {
                 maxZoom: 18,
-                subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"],
                 attribution: 'Tiles courtesy of <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
             });
-            var mapboxBA = L.layerGroup([L.tileLayer("https://api.mapbox.com/styles/v1/pseudocereal/cilh1ic7j006la8ktx4klvzu8.html?title=true&access_token=pk.eyJ1IjoicHNldWRvY2VyZWFsIiwiYSI6IjY2NGNhMTEwZTU4MzUyZDc1Njg1OGMyNmU5ZGI5NDU4In0.PP0mtne9k9Awcn4fCgM3gg#12/-16.451974616312583/-68.85750465622378/0", {
+            var mapboxBA = L.layerGroup([L.tileLayer("https://{s}.tiles.mapbox.com/v3/[MAP ID]/{z}/{x}/{y}.png", {
                 maxZoom: 18,
-                subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"]
             }), L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/hyb/{z}/{x}/{y}.png", {
                 maxZoom: 19,
-                subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"],
                 attribution: 'Tiles courtesy of <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
             })]);
 
