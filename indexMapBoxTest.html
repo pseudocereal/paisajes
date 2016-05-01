@@ -513,7 +513,7 @@
         <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/typeahead.js/typeahead.min.js"></script> <!--https://github.com/twitter/typeahead.js/-->
         <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-        &lt;!--<script type="text/javascript" src="assets/leaflet-hash.js"></script>--&gt
+        <script type="text/javascript" src="assets/leaflet-hash.js"></script>
         <script type="text/javascript">
         
         	
@@ -597,15 +597,17 @@
  // Add Basemaps 
  
             // Basemap Layers
-           var mapboxOV = L.tileLayer(“https://{s}.tiles.mapbox.com/v3/geyerbri-msu.n7b75ema/{z}/{x}/{y}.png”, {
+            var mapboxOV = L.tileLayer("https://{s}.tiles.mapbox.com/v3/[mapbox.satellite]/{-69.133193}/{-15.873467}/{8.00}.png", {
                 maxZoom: 19,
                 attribution: 'Tiles courtesy of <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
             });
-            var mapboxSA = L.tileLayer(“https://{s}.tiles.mapbox.com/v3/geyerbri-msu.hn5m20b4/{z}/{x}/{y}.png”, {
+            var mapboxSA = L.tileLayer("https://{s}.tiles.mapbox.com/v3/[MAP ID]/{z}/{x}/{y}.png", {
                 maxZoom: 18,
                 attribution: 'Tiles courtesy of <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
             });
-            var mapboxBA = L.tileLayer(“https://{s}.tiles.mapbox.com/v3/geyerbri-msu.pf265i0d/{z}/{x}/{y}.png”, {
+            var mapboxBA = L.layerGroup([L.tileLayer("https://{s}.tiles.mapbox.com/v3/[MAP ID]/{z}/{x}/{y}.png", {
+                maxZoom: 18,
+            }), L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/hyb/{z}/{x}/{y}.png", {
                 maxZoom: 19,
                 attribution: 'Tiles courtesy of <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
             })]);
@@ -734,7 +736,7 @@
                 layers: [mapboxOV, cemeteries, cremation]
             });
 			
-			// var hash = new L.Hash(map);
+			var hash = new L.Hash(map);
 			
             // Larger screens get expanded layer control
             if (document.body.clientWidth <= 767) {
