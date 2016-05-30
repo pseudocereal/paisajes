@@ -14,8 +14,9 @@
         <!-- Core CSS -->
         <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href=”http://ieldran.matrix.msu.edu/assets/typeahead.js/typeahead.js-bootstrap.css”>
+        <link href="assets/typeahead.js/typeahead.js-bootstrap.css" rel="stylesheet" type="text/css"> <!--https://github.com/jharding/typeahead.js-bootstrap.css-->
         <link href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         
          <!-- Personalized font, can add through Google APIs -->
         <link href='https://fonts.googleapis.com/css?family=Courgette|Kota+One' rel='stylesheet' type='text/css'>
@@ -303,7 +304,7 @@
                                         <div class="text">
                                             <label>
                                                 <input type="checkbox" name="overlayLayers" id="cemeteries" z-index="3" checked>
-                                                Communities   &nbsp;<img src="img/pinred.png" width="20" height="28">
+                                                Communities   &nbsp;<img src="img/pinSteelBlue.png" width="20" height="28">
                                             </label>
                    
                                         </div>
@@ -457,7 +458,7 @@
                     </div>
                     <div class="modal-body">
                         <p>
-                        <img src="img/pinred.png" width="24" height="28"> Mixed Cemeteries</p>
+                        <img src="img/pinSteelBlue.png" width="24" height="28"> Mixed Cemeteries</p>
                         <p>
                         <img src="img/pinblue.png" width="24" height="28"> Cremation Cemeteries</p>
                     </div>
@@ -510,10 +511,9 @@
 
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="http://cdn.jsdelivr.net/typeahead.js/0.9.3/typeahead.min.js"></script> <!--https://github.com/twitter/typeahead.js/-->
+        <script type="text/javascript" src="assets/typeahead.js/typeahead.min.js"></script> <!--https://github.com/twitter/typeahead.js/-->
         <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-        <!--<script type="text/javascript" src="assets/leaflet-hash.js"></script>commented out for now-->
-    
+        <script type="text/javascript" src="assets/leaflet-hash.js"></script>
         <script type="text/javascript">
         
         	
@@ -597,15 +597,17 @@
  // Add Basemaps 
  
             // Basemap Layers
-           var mapboxOV = L.tileLayer(“https://{s}.tiles.mapbox.com/v3/geyerbri-msu.n7b75ema/{z}/{x}/{y}.png”, {
+            var mapboxOV = L.tileLayer("https://{s}.tiles.mapbox.com/v3/[mapbox.satellite]/{-69.133193}/{-15.873467}/{8.00}.png", {
                 maxZoom: 19,
                 attribution: 'Tiles courtesy of <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
             });
-            var mapboxSA = L.tileLayer(“https://{s}.tiles.mapbox.com/v3/geyerbri-msu.hn5m20b4/{z}/{x}/{y}.png”, {
+            var mapboxSA = L.tileLayer("https://{s}.tiles.mapbox.com/v3/[MAP ID]/{z}/{x}/{y}.png", {
                 maxZoom: 18,
                 attribution: 'Tiles courtesy of <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
             });
-            var mapboxBA = L.tileLayer(“https://{s}.tiles.mapbox.com/v3/geyerbri-msu.pf265i0d/{z}/{x}/{y}.png”, {
+            var mapboxBA = L.layerGroup([L.tileLayer("https://{s}.tiles.mapbox.com/v3/[MAP ID]/{z}/{x}/{y}.png", {
+                maxZoom: 18,
+            }), L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/hyb/{z}/{x}/{y}.png", {
                 maxZoom: 19,
                 attribution: 'Tiles courtesy of <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
             })]);
@@ -734,7 +736,7 @@
                 layers: [mapboxOV, cemeteries, cremation]
             });
 			
-			// var hash = new L.Hash(map);
+			var hash = new L.Hash(map);
 			
             // Larger screens get expanded layer control
             if (document.body.clientWidth <= 767) {
