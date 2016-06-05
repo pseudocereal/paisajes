@@ -597,11 +597,11 @@
  // Add Basemaps 
  
             // Basemap Layers
-           var mapboxOV = L.tileLayer("https://{s}.tiles.mapbox.com/v3/pseudocereal.n7bbng4m/{z}/{x}/{y}.png", {
+           var mapboxOV = L.tileLayer("https://{s}.tiles.mapbox.com/v3/geyerbri-msu.n7b75ema/{z}/{x}/{y}.png", {
                 maxZoom: 19,
                 attribution: 'Tiles courtesy of <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
             });
-            var mapboxSA = L.tileLayer("https://{s}.tiles.mapbox.com/v3/pseudocereal.n81hcjg9/{z}/{x}/{y}.png", {
+            var mapboxSA = L.tileLayer("https://{s}.tiles.mapbox.com/v3/geyerbri-msu.hn5m20b4,/{z}/{x}/{y}.png", {
                 maxZoom: 18,
                 attribution: 'Tiles courtesy of <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
             });
@@ -733,8 +733,8 @@
             });
 
             map = L.map("map", {
-                zoom: 6,
-                center: [52.95042, -1.142578], 
+                zoom: 13,
+                center: [-16.454, -68.853], 
                 layers: [mapboxOV, cemeteries, cremation]
             });
 			
